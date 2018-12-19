@@ -10,9 +10,9 @@ Javaによる統計処理のサンプルコード。
 ************************************************************
 */
 
-package java_statistics_sample;
+package java_sample;
 
-public class Sample01 {
+public class Java_Sample_CalculateCorrelation.java  {
 
 	public static void main(String[] args){
 		// 50人分の（身長・体重・父の身長）の配列
