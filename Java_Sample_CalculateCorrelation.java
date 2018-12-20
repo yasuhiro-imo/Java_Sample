@@ -30,7 +30,7 @@ public class Java_Sample_CalculateCorrelation.java  {
 				165,172,166,160,168,172,160,168,160,160,168,175,167,165,164,
 				160,160,172,165,180};
 
-		//平均値（身長・体重・父の身長）mean
+		// 平均値（身長・体重・父の身長）mean
 		double h_mean = 0, w_mean = 0, p_mean = 0;
 		
 		for(int i=0; i<height.length; i++) {
@@ -42,10 +42,10 @@ public class Java_Sample_CalculateCorrelation.java  {
 		for(int i=0; i<paternal_height.length; i++) {
 			p_mean += paternal_height[i] / paternal_height.length;
 		}
-		//平均値の表示
+		// 平均値の表示
 		System.out.println(h_mean + "\n" + w_mean + "\n" + p_mean + "\n");
 
-		//分散の算出 sigma
+		// 分散の算出 sigma
 		double h_sigma = 0, w_sigma = 0, p_sigma = 0;
 		
 		for(int i=0; i<height.length; i++) {
@@ -66,11 +66,11 @@ public class Java_Sample_CalculateCorrelation.java  {
 		p_sigma /= paternal_height.length;
 		p_sigma = Math.sqrt(p_sigma);
 		
-		//分散値の表示
+		// 分散値の表示
 		System.out.println(h_sigma + "\n" + w_sigma + "\n" + p_sigma + "\n");
 
-		//相関係数を計算(身長と体重) relation
-		//式 = 共分散 / 標準偏差 ＊ 標準偏差 ;
+		// 相関係数を計算(身長と体重) Correlation
+		// (式) 相関係数 = 共分散 / （標準偏差1 ＊ 標準偏差2） ;
 		double total_hw=0;
 		
 		for(int i=0; i<height.length; i++) {
@@ -78,7 +78,7 @@ public class Java_Sample_CalculateCorrelation.java  {
 		}
 		total_hw = total_hw / height.length / h_sigma / w_sigma;
 
-		//相関係数を計算(身長と父の身長)
+		// 相関係数を計算(身長と父の身長)
 		double total_hp = 0;
 		
 		for(int i=0; i<height.length; i++) {
@@ -86,7 +86,7 @@ public class Java_Sample_CalculateCorrelation.java  {
 		}
 		total_hp = total_hp / height.length / h_sigma / p_sigma;
 
-		//相関係数を計算(体重と父の身長)
+		// 相関係数を計算(体重と父の身長)
 		double total_wp=  0;
 		
 		for(int i=0; i<weight.length; i++) {
@@ -94,7 +94,7 @@ public class Java_Sample_CalculateCorrelation.java  {
 		}
 		total_wp = total_wp / weight.length / w_sigma / p_sigma;
 
-		//相関係数の結果表示
+		// 相関係数の結果表示
 		System.out.println(total_hw + "\n" + total_hp + "\n" + total_wp + "\n" );
 	}
 }
